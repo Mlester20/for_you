@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=IBM+Plex+Sans:wght@300&family=Titillium+Web:wght@300&family=Whisper&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: pink;
+            margin: 0;
+            padding: 0;
+            font-family: 'Whisper', cursive;
+        }
+
+        .container {
+            position: relative;
+            max-width: 350px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .name {
+            color: black;
+            font-size: 31px;
+            font-weight: bold;
+            margin-left: -68%;
+        }
+
+        .data {
+            width: 100%;
+            height: auto;
+            font-size: 18px;
+            line-height: 150%;
+        }
+
+        #play, #stop {
+            width: 100%;
+            height: 38px;
+            margin-top: 20px;
+            border-radius: 20px;
+            border: 1px solid rgb(0, 119, 255);
+            cursor: pointer;
+        }
+
+        #play:hover, #stop:hover {
+            background-color: rgb(0, 132, 255);
+            border: none;
+            color: rgb(255, 255, 255);
+            transition: 1s;
+        }
+
+        .eyes {
+            width: 100%;
+            max-width: 185px;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 9px;
+        }
+
+        .disc {
+            width: 80px;
+            height: 80px;
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: -2;
+            animation: rotate 5s infinite linear;
+            display: none;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .name {
+                margin-left: 0;
+            }
+
+            #play, #stop {
+                width: 100%;
+            }
+
+            .disc {
+                margin-top: 20px;
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(100deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            75% {
+                transform: rotate(280deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="name"></p>
+        <p class="data"></p>
+         <p style="text-align: right;">Sincerely yours,<br>Mark Lester Raguindin</p>    
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let name = document.querySelector('.name');
+        name.textContent = `Dear ${localStorage.getItem('name')},`;
+
+        let playMusic = document.querySelector('#play');
+        let stopMusic = document.querySelector('#stop');
+        let disc = document.querySelector('.disc');
+
+        var letter = [
+            `Thank you for being a part of my 2023 this year, I'll be looking forward to embarking on my journey with you. I know it won't be easy for either of us, but I know we can manage whatever comes our way. You are the best thing that ever happened to me, and I want you to know that all of my efforts are for you and only you; don't worry, I won't change, You don't have to please me with anything else since I'll gladly do everything for you. Every day I desire for nothing except you. and the love of my life. Our journey together is just beginning, and I can't wait to see where it takes us. Here's to a future filled with love, happiness, and endless possibilities. You are the inspiration behind every beautiful thought that graces my mind and the source of the smile that graces my lips. Your presence in my life is the most precious gift I've ever received, and I pledge to treasure you eternally. When I peer into your eyes, I see the depth of your affection for me. Occasionally, I ponder if I'm truly worthy of your love. The way you regard me is both comforting and mesmerizing, often rendering me speechless. Thank you for eternally showering me with love. I can't help but smile as I write this letter. Your love is like a gentle breeze that brings calmness to my life. Your kindness, your support, and your unwavering belief in me mean the world to me. I love you more than words can express, and I look forward to every moment we spend together.`
+        ];
+
+        var data = document.querySelector('.data');
+        const randomNumber = Math.floor(Math.random() * letter.length);
+        data.textContent = letter[randomNumber];
+      
+    });
+</script>
+</html>

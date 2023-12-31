@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Read and Decide</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      /*background-image: url('bg.jpg'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: #fff; /* Text color for better visibility */
+    }
+
+    .content {
+      text-align: center;
+    }
+
+    #warning {
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for better text readability */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    button {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+<div class="content">
+  <div id="warning">
+    <p>Once you enter, there's no turning back.</p>
+    <button onclick="proceed()">Enter</button>
+    <button onclick="exit()">Exit</button>
+  </div>
+</div>
+
+<script>
+  function proceed() {
+    var confirmation = confirm("Are you sure you want to proceed?");
+    
+    if (confirmation) {
+      window.location.href = "name.html"; // Redirect to another page
+    }
+  }
+
+  function exit() {
+    alert("You chose to exit. No action taken.");
+  }
+</script>
+
+</body>
+</html>

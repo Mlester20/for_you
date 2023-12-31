@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Nunito:wght@600&family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Nunito:wght@600&family=Raleway:wght@200&family=Whisper&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+     
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Titillium+Web:wght@300&display=swap');
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: pink;
+        }
+        
+        h1 {
+            text-align: center;
+            font-family: 'Lora', serif;
+            position: absolute;
+            left: 0;
+            color: white;
+            right: 0;
+            margin: 5%;
+            top: 245px;
+            bottom: 0;
+        }
+        
+        button {
+            height: 42px;
+            width: 100px;
+            font-family: 'Titillium Web', sans-serif;
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            position: absolute;
+            font-weight: bold;
+            background-color: rgb(0, 140, 255);
+            border: none;
+            border-radius: 20px;
+        }
+        
+        img {
+            position: absolute;
+            width: 80%;
+            max-width: 424px;
+            height: auto;
+            margin: auto;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 70%;
+        }
+        
+        #yes {
+            margin: 2%;
+        }
+        
+        #no {
+            margin: 2%;
+            margin-left: 56%;
+            transition: 1s;
+        }
+        
+        .container-sm {
+            position: absolute;
+            margin: auto;
+            top: 68%;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            height: 101px;
+            width: 223px;
+        }
+        
+        .container {
+            height: 302px;
+            width: 80%;
+            max-width: 338px;
+            margin: auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" id="happy" alt="">
+        <h1 id="txt">Will you be my girlfriend?</h1>
+    </div>
+    
+    <div class="container-sm">
+        <button id="yes">Yes</button>
+        <button id="no" onmouseover="moveButton()">No</button>
+    </div>
+    
+    <script>
+        let containerSm = document.querySelector('.container-sm')
+        let container = document.querySelector('.container')
+        let txt = document.querySelector('#txt')
+        let no = document.querySelector('#no');
+        let yes = document.querySelector('#yes');
+        let emotion = document.querySelector('.emotion');
+        var ex = document.querySelector('.container-sm')
+
+        yes.addEventListener('click',()=>{
+            containerSm.innerHTML = ''
+            container.innerHTML = `<img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration"> <h1 id="txt">I love you</h1>`
+            setTimeout((e)=>{
+                window.location.href = './wish.html'
+            },2000)
+        })
+
+        function moveButton() {
+            var x = Math.random() * (window.innerWidth - 200);
+            var y = Math.random() * (window.innerHeight - 50);
+            
+            no.style.left = `${x}px`;
+            no.style.top = `${y}px`;                      
+        }
+    </script>
+</body>
+</html>
